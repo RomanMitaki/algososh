@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import {SolutionLayout} from "../ui/solution-layout/solution-layout";
 import styles from './sorting-page.module.css'
 import {RadioInput} from "../ui/radio-input/radio-input";
@@ -29,8 +29,15 @@ export const SortingPage: React.FC = () => {
 
     const createArrOnClick = () => {
         const arr = randomArr();
+        setIndexes({first: -Infinity, counter: -1});
         setArr([...arr])
     }
+
+    const initialArray = randomArr();
+
+    useEffect(() => {
+        setArr(initialArray);
+    }, [])
 
     const bubbleSort = async (arr: number[], state: string): Promise<number[]> => {
         setIsLoading(true);
@@ -65,9 +72,7 @@ export const SortingPage: React.FC = () => {
         setIndexes(prev => {
             return {first: -Infinity, counter: 100}
         })
-        await makeDelay(3000);
-        setArr([]);
-        setIndexes({first: -Infinity, counter: -1});
+        //setIndexes({first: -Infinity, counter: -1});
         state === 'Descending' ? setIsDescending(false) : setIsAscending(false);
         setIsLoading(false);
         return arr;
@@ -102,9 +107,6 @@ export const SortingPage: React.FC = () => {
             }
         }
         setIndexes({first: +Infinity, second: -Infinity, counter: -1})
-        await makeDelay(3000);
-        setArr([]);
-        setIndexes({first: -Infinity, second: -Infinity, counter: -1})
         state === 'Descending' ? setIsDescending(false) : setIsAscending(false);
         setIsLoading(false);
         return arr;

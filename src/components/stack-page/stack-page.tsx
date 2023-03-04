@@ -105,7 +105,7 @@ export const StackPage: React.FC = () => {
     return (
         <SolutionLayout title="Стек">
             <form className={styles.container} onSubmit={handlePush}>
-                <Input type={'text'}
+                <Input type={'number'}
                        maxLength={4}
                        isLimitText={true}
                        extraClass={`${styles.input}`}

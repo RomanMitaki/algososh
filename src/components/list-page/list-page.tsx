@@ -238,7 +238,9 @@ export const ListPage: React.FC = () => {
     return (
         <SolutionLayout title="Связный список">
             <div className={styles.formContainer}>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={(e) => {
+                    e.preventDefault()
+                }}>
                     <Input
                         type={"text"}
                         maxLength={4}
@@ -259,7 +261,7 @@ export const ListPage: React.FC = () => {
                             isLoader={isAddHead}
                             disabled={
                                 (circlesList as string[]) &&
-                                (!data || regex.test(data) || circlesList!.length > 8)
+                                (!data || circlesList!.length > 8)
                             }
                         />
                     </div>
@@ -271,7 +273,7 @@ export const ListPage: React.FC = () => {
                             isLoader={isAddTail}
                             disabled={
                                 (circlesList as string[]) &&
-                                (!data || regex.test(data) || circlesList!.length > 8)
+                                (!data || circlesList!.length > 8)
                             }
                         />
                     </div>
@@ -294,9 +296,11 @@ export const ListPage: React.FC = () => {
                         />
                     </div>
                 </form>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={(e) => {
+                    e.preventDefault()
+                }}>
                     <Input
-                        type={"text"}
+                        type={"number"}
                         extraClass={`${styles.input}`}
                         placeholder={"Введите индекс"}
                         onChange={handleChange}
@@ -311,7 +315,7 @@ export const ListPage: React.FC = () => {
                             type={"button"}
                             isLoader={isAddByIndex}
                             onClick={handleAddByIndex}
-                            disabled={!index || index < 0 || index > limitIndex || isNaN(Number(data)) || data === '' || (!isNaN(Number(data)) && isNaN(index))}
+                            disabled={!index || index < 0 || index > limitIndex || data === '' || isNaN(index) || !data}
                         />
                     </div>
                     <div className={styles.btnWrapperBig}>
@@ -320,7 +324,7 @@ export const ListPage: React.FC = () => {
                             type={"button"}
                             onClick={handleDeleteByIndex}
                             isLoader={isDeleteByIndex}
-                            disabled={index < 0 || index > limitIndex || !index}
+                            disabled={index < 0 || index > limitIndex || !index || !data}
                         />
                     </div>
                 </form>

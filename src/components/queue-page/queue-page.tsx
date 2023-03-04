@@ -98,7 +98,7 @@ export const QueuePage: React.FC = () => {
     return (
         <SolutionLayout title="Очередь">
             <form className={styles.container} onSubmit={handleEnqueue}>
-                <Input type={'text'}
+                <Input type={'number'}
                        maxLength={4}
                        isLimitText={true}
                        extraClass={`${styles.input}`}
