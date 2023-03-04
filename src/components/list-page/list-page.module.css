@@ -1,0 +1,91 @@
+.formContainer {
+    width: 952px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form {
+    width: 952px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+}
+
+.btnWrapperSmall {
+    width: 175px;
+    box-sizing: border-box;
+    margin-right: 12px;
+}
+
+.btnWrapperSmall:last-of-type {
+    margin-right: 0;
+}
+
+.btnWrapperSmall > button {
+    width: 100%;
+}
+
+.btnWrapperBig {
+    width: 362px;
+    box-sizing: border-box;
+    margin-right: 12px;
+}
+
+.btnWrapperBig:last-of-type {
+    margin-right: 0;
+}
+
+.btnWrapperBig > button {
+    width: 100%;
+}
+
+.input {
+    margin-right: 12px;
+    width: 204px;
+}
+
+.circleList {
+    box-sizing: border-box;
+    margin: 150px auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.listItem {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.circle {
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.circle:last-child {
+    margin-right: 0;
+}
+
+
+
+
