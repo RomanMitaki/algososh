@@ -1,0 +1,1 @@
+export const circlesArr = '[class*="circle_circle"]';
