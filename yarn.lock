@@ -3581,6 +3581,11 @@
   "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.0.11.tgz"
   "version" "3.0.11"
 
+"cypress-wait-until@^1.7.2":
+  "integrity" "sha512-uZ+M8/MqRcpf+FII/UZrU7g1qYZ4aVlHcgyVopnladyoBrpoaMJ4PKZDrdOJ05H5RHbr7s9Tid635X3E+ZLU/Q=="
+  "resolved" "https://registry.npmjs.org/cypress-wait-until/-/cypress-wait-until-1.7.2.tgz"
+  "version" "1.7.2"
+
 "cypress@^12.8.1":
   "integrity" "sha512-lIFbKdaSYAOarNLHNFa2aPZu6YSF+8UY4VRXMxJrFUnk6RvfG0AWsZ7/qle/aIz30TNUD4aOihz2ZgS4vuQVSA=="
   "resolved" "https://registry.npmjs.org/cypress/-/cypress-12.8.1.tgz"

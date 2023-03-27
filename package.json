@@ -48,6 +48,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "cypress": "^12.8.1",
+    "cypress-wait-until": "^1.7.2",
     "eslint-plugin-cypress": "^2.12.1"
   }
 }

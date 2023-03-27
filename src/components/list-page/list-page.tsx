@@ -324,7 +324,7 @@ export const ListPage: React.FC = () => {
                             type={"button"}
                             onClick={handleDeleteByIndex}
                             isLoader={isDeleteByIndex}
-                            disabled={index < 0 || index > limitIndex || !index || !data}
+                            disabled={index < 0 || index > limitIndex || !index}
                         />
                     </div>
                 </form>
