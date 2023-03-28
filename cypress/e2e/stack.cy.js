@@ -1,4 +1,4 @@
-import {circlesArr} from "../constants/constants";
+import {circlesArr, defaultColor, changingColor} from "../constants/constants";
 import {SHORT_DELAY_IN_MS} from "../../src/constants/delays";
 
 describe('Stack test', () => {
@@ -6,14 +6,14 @@ describe('Stack test', () => {
     const addElement = (num) => {
         cy.get('input').type(num);
         cy.contains('Добавить').click();
-        cy.get(circlesArr).contains(num).parent().invoke('attr', 'class').then(classList => expect(classList).contains('circle_changing'));
+        cy.get(circlesArr).contains(num).parent().invoke('attr', 'class').then(classList => expect(classList).contains(changingColor));
         cy.tick(SHORT_DELAY_IN_MS);
     }
 
     beforeEach(() => {
         cy.clock();
         cy.viewport(1536, 960);
-        cy.visit('http://localhost:3000/stack');
+        cy.visit('stack');
     })
 
     it('should disable button then input is not a number', () => {
@@ -28,9 +28,9 @@ describe('Stack test', () => {
 
         addElement('2');
         cy.get(circlesArr).then(num => {
-            cy.get(num[0]).invoke('attr', 'class').then(classList => expect(classList).contains('circle_default'));
+            cy.get(num[0]).invoke('attr', 'class').then(classList => expect(classList).contains(defaultColor));
             cy.get(num[0]).should('have.text', '1');
-            cy.get(num[1]).invoke('attr', 'class').then(classList => expect(classList).contains('circle_changing'));
+            cy.get(num[1]).invoke('attr', 'class').then(classList => expect(classList).contains(defaultColor));
             cy.get(num[1]).should('have.text', '2');
             cy.get(num[1]).siblings('div').contains('top');
         })
@@ -45,7 +45,7 @@ describe('Stack test', () => {
 
         cy.get(circlesArr).should('have.length', 1);
         cy.get(circlesArr).then(item => {
-            cy.get(item[0]).invoke('attr', 'class').then(classList => expect(classList).contains('circle_default'));
+            cy.get(item[0]).invoke('attr', 'class').then(classList => expect(classList).contains(defaultColor));
             cy.get(item[0]).should('have.text', '1');
             cy.get(item[0]).siblings('div').contains('top');
         })

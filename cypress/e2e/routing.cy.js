@@ -2,7 +2,7 @@ describe('Routing testing', () => {
     context('macbook 16 resolution', () => {
         beforeEach(() => {
             cy.viewport(1536, 960);
-            cy.visit('http://localhost:3000');
+            cy.visit('');
         })
 
         it('should open main page by default', function () {

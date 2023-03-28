@@ -4,7 +4,7 @@ import {SHORT_DELAY_IN_MS} from "../../src/constants/delays";
 describe('String test', () => {
     beforeEach(() => {
         cy.viewport(1536, 960);
-        cy.visit('http://localhost:3000/fibonacci');
+        cy.visit('fibonacci');
     })
 
     it('should disable button then input is clear', () => {
