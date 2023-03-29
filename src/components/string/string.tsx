@@ -34,12 +34,11 @@ export const StringComponent: React.FC = () => {
 
         while (j >= i) {
             setIndexes({start: i, end: j});
-            await makeDelay(500);
+            await makeDelay(1000);
             swap(list, i, j);
             setList([...list]);
             j--;
             i++;
-            await makeDelay(500);
         }
 
         setIndexes({start: Infinity, end: -Infinity});

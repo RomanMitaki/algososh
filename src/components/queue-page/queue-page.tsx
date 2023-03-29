@@ -36,8 +36,9 @@ export const QueuePage: React.FC = () => {
         setEdges([head, tail]);
         queue.enqueue(str);
         setIndex(tail);
-        await makeDelay(500);
+
         setList(queue.print);
+        await makeDelay(500);
         setIndex(-Infinity);
         setIsEnqueue(false);
         setIsLoading(false);
@@ -50,11 +51,10 @@ export const QueuePage: React.FC = () => {
         let [head, tail] = queue.showEdges();
         setIndex(head);
         queue.dequeue();
-
-        await makeDelay(500);
-        let [head1, tail1] = queue.showEdges();
-        setEdges([head1 <= tail - 1 ? head1 : tail - 1, tail - 1]);
         setList(queue.print);
+        let [head1] = queue.showEdges();
+        await makeDelay(500);
+        setEdges([head1 <= tail - 1 ? head1 : tail - 1, tail - 1]);
 
         setIndex(-Infinity);
         setIsDequeue(false);
